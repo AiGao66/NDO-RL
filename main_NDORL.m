@@ -13,13 +13,13 @@ L=length(t);
 for i=1:L
   [dx,u(i),x1(i),x2(i),hat_x1(i),hat_x2(i),yr(i),z1(i),hat_alpha1(i),z2(i),d1(i),d2(i),hat_d1(i),hat_d2(i),hat_epsilon1(i),hat_epsilon2(i),rho1(i),rho2(i)]=control_NDORL(t(i),x(i,:)');
 end
-%% ¸ú×ÙÎó²î
+%% è·Ÿè¸ªè¯¯å·®
 figure;
 plot(t,x1,t,yr,'--r','linewidth',2);
 hold on;
 legend('$\xi_{1}$','$y_{r}$','interpreter','latex');
 xlabel('Time(sec)');
-%% ¹Û²âÎó²îx1,x2
+%% è§‚æµ‹è¯¯å·®x1,x2
 figure;
 subplot(2,1,1);
 plot(t,x1-hat_x1,'-r','linewidth',2);
@@ -37,13 +37,13 @@ xlabel('Time(sec)');
 figure;
 subplot(2,1,1);
 plot(t,d1-hat_d1,'-r','linewidth',2);
-ylim([-2 4])
+ylim([-1 1])
 hold on;
 legend('$\tilde{d}_{1}$','interpreter','latex');
 xlabel('Time(sec)');
 subplot(2,1,2);
 plot(t,d2-hat_d2,'-r','linewidth',2);
-ylim([-4 8])
+ylim([-2 2])
 hold on;
 legend('$\tilde{d}_{2}$','interpreter','latex');
 xlabel('Time(sec)');
@@ -101,7 +101,7 @@ plot(t,u,'b','linewidth',2);
 hold on;
 xlabel('Time(sec)')
 legend('$u$','interpreter','latex');
- %% ÐÔÄÜÖ¸±êº¯Êýh2
+ %% æ€§èƒ½æŒ‡æ ‡å‡½æ•°h2
 figure;
 subplot(2,1,1)
 h1=z1.*z1+hat_alpha1.*hat_alpha1;
@@ -115,7 +115,7 @@ plot(t,h2,'linewidth',2);
 xlabel('Time(sec)')
 legend('$h_{2}=z_{2}^2+u^{2}$','interpreter','latex');
 
- %% rhoºÍu
+ %% rhoå’Œu
 figure;
 subplot(2,1,1)
 plot(t,rho1,t,rho2,'-r','linewidth',2);
