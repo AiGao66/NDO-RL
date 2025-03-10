@@ -1,8 +1,7 @@
 function [dx,u,x1,x2,hat_x1,hat_x2,yr,z1,hat_alpha1,z2,d1,d2,hat_d1,hat_d2,hat_epsilon1,hat_epsilon2,rho1,rho2]=control_NDORL(t,x)
-%% 参数
-c1=10;c2=18;l1=15;l2=20;gamma_c1=15;gamma_c2=15;gamma_a1=16;gamma_a2=16;k1=10;k2=20;gamma1=2;gamma2=5;
+%% 虏脦脢媒
+c1=10;c2=18;l1=15;l2=20;gamma_c1=15;gamma_c2=15;gamma_a1=16;gamma_a2=16;k1=10;k2=20;gamma1=5;gamma2=5;
 Gamma1=0.2;Gamma2=0.5;theta1=20;theta2=30;p=99/101;q=101/99;
-%% 变量
 x1=x(1);x2=x(2);hat_x1=x(3);hat_x2=x(4);hat_epsilon1=x(5);hat_epsilon2=x(6);rho1=x(7);rho2=x(8);
 % hat_Wf1=x(9:32);hat_Wf2=x(33:64);
 % hat_Wc1=x(65:88);hat_Wc2=x(89:120);
@@ -10,11 +9,9 @@ x1=x(1);x2=x(2);hat_x1=x(3);hat_x2=x(4);hat_epsilon1=x(5);hat_epsilon2=x(6);rho1
 hat_Wf1=x(9:32);hat_Wf2=x(33:64);
 hat_Wc1=x(65:88);hat_Wc2=x(89:120);
 hat_Wa1=x(121:144);hat_Wa2=x(145:176);
-%% 参考信号
 f2=0.5*sin(x1^2)-x2;
-d1=0.001;
-% d1=0.006*t;
-d2=0.04*sin(0.04*t)+0.02;
+d1=0.1;
+d2=0.4*sin(0.04*t)+0.2;
 yr=0.2*sin(t);
 yr_d=0.2*cos(t);
 %yr_dd=-1.8*cos(0.6*t);
